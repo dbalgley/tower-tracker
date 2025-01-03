@@ -5,11 +5,11 @@ requires = ["hatchling", "hatch-vcs"]
 [project]
 description = "An example python project for use as a template"
 dynamic = ["version"]
-name = "example_project"
+name = "tower_tracker"
 readme = "README.md"
 requires-python = ">=3.6"
 # production dependencies
-dependencies = ["sampleproject~=3.0.0"]
+dependencies = ["pandas", "matplotlib", "numpy", "sqlalchemy", "alembic"]
 
 # Optional dependency lists. Installed using [].
 # For example, pip install -e .[dev], or pip install example_project[test]
