@@ -198,7 +198,8 @@ def show_data_viewer() -> None:
 
         for metric in metrics:
             grouped_data = [
-                df[df["tier"] == tier][metric].dropna()
+                # Filter out zero values
+                df[(df["tier"] == tier) & (df[metric] > 0)][metric].dropna()
                 for tier in sorted(df["tier"].unique())
             ]
             tiers = sorted(df["tier"].unique())
