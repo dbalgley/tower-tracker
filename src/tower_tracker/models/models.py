@@ -10,6 +10,7 @@ class RunStatistics(Base):  # ignore: type
     __tablename__ = "run_statistics"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    run_id = Column(Integer, nullable=False)
     datetime_collected = Column(DateTime, default=datetime.utcnow, nullable=False)
     tier = Column(Integer, nullable=False)
     wave = Column(Integer, nullable=False)
