@@ -1,7 +1,17 @@
 import pandas as pd
+from sqlalchemy import func
 
 from tower_tracker.database import get_session
+from tower_tracker.models.models import RunStatistics
 
+
+def generate_new_run_id():
+    """
+    Generate a new run_id based on the highest existing run_id.
+    """
+    with get_session() as session:
+        result = session.query(func.max(RunStatistics.run_id)).scalar()
+        return (result or 0) + 1
 
 def analyze_data():
     """

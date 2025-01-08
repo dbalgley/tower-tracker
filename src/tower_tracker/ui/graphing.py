@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-
+# TODO: This function is not used in the current implementation. It needs to be used instead of the current, nested method.
 def plot_outliers(df):
     """
     Plots a box-and-whisker plot grouped by tier.
